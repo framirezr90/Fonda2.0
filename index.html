@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peña CCRN</title>
+  <link rel="stylesheet" href="assets/CSS/styles.css">
+  <style>
+    /* Estilos adicionales para el historial */
+    #historialVentas {
+      margin-top: 20px;
+    }
+    #historialVentas table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    #historialVentas th, #historialVentas td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    #historialVentas th {
+      background-color: #f2f2f2;
+    }
+    .producto-anulado {
+      color: red;
+      text-decoration: line-through;
+    }
+    /* Estilo adicional para alinear el campo de nombre y el select */
+    .medioPago {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .medioPago label {
+      margin-right: 10px;
+    }
+    .medioPago input {
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+    <h1>Peña Folclórica CCRN</h1>
+
+    <!-- Sección de desglose de ventas -->
+    <div class="desgloseVentas no-imprimir" id="desgloseVentas">
+      <h2>Desglose de Ventas</h2>
+      <p>Ventas en Efectivo: $<span id="ventasEfectivo">0.00</span></p>
+      <p>Ventas con Transferencias: $<span id="ventasTransferencia">0.00</span></p>
+      <p>Total de Ventas: $<span id="totalVentas">0.00</span></p>
+    </div>
+
+    <!-- Formulario para ticket -->
+    <form id="formularioTicket" class="no-imprimir">
+      <div id="contenedorProductos"></div>
+      <button type="button" class="btn" id="agregarProducto">Añadir Producto</button><br>
+      <div class="totalCompra">Total de la Compra: $<span id="montoTotal">0</span></div><br>
+      <div class="numeroTicket">Número de Ticket: <span id="numeroTicket">1</span></div><br>
+      
+      <!-- Medio de pago y nombre del cliente -->
+      <div class="medioPago">
+        <label for="nombreCliente">Nombre del Cliente:</label>
+        <input type="text" id="nombreCliente" placeholder="Ingrese el nombre">
+        
+        <label for="selectMedioPago">Medio de Pago:</label>
+        <select id="selectMedioPago">
+          <option value="efectivo">Efectivo</option>
+          <option value="transferencia">Transferencia Bancaria</option>
+        </select>
+      </div>
+      
+      <button type="submit" class="btn">Generar Ticket</button>
+    </form>
+
+    <!-- Sección para mostrar el ticket impreso -->
+    <div id="ticketImpreso" class="imprimir" style="display: none;">
+      <h2>Detalle del Ticket</h2>
+      <div id="detalleVenta"></div>
+    </div>
+
+    <!-- Sección para mostrar el historial de ventas -->
+    <div id="historialVentas" class="no-imprimir">
+      <h2>Historial de Ventas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Número de Ticket</th>
+            <th>Productos</th>
+            <th>Total</th>
+            <th>Medio de Pago</th>
+            <th>Nombre del Cliente</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpoHistorial">
+          <!-- Las filas se agregarán dinámicamente aquí -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="assets/JS/script.js"></script>
+
+</body>
+</html>
+

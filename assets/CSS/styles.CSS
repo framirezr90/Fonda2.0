@@ -1,0 +1,244 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Estilos para el historial de ventas */
+#historialVentas {
+    margin-top: 20px;
+}
+
+#historialVentas table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#historialVentas th, #historialVentas td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#historialVentas th {
+    background-color: #f2f2f2;
+}
+
+/* Estilo para productos anulados */
+.producto-anulado {
+    color: red;
+    text-decoration: line-through;
+}
+
+/* Estilos para el medio de pago */
+.medioPago {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.medioPago label {
+    margin-right: 10px;
+}
+
+.medioPago input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Estilo adicional para el desglose de ventas */
+.desgloseVentas {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.desgloseVentas h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.desgloseVentas p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.desgloseVentas span {
+    font-weight: bold;
+}
+
+/* Ocultar desglose de ventas al imprimir */
+@media print {
+    #desgloseVentas {
+        display: none;
+    }
+}
+
+/* Estilos para los botones */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #95a5a6;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background-color: #229954;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btnEliminar {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.4s ease;
+}
+
+.btnEliminar:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btnAnular {
+    background-color: #dc3545;
+    border-radius: 50%;
+    color: #fff;
+    padding: 12px;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btnAnular:hover {
+    background-color: #c82333;
+    animation: pulse 1s infinite;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+
+/* Ocultar botones al imprimir */
+@media print {
+    .btn {
+        display: none;
+    }
+    .no-imprimir {
+        display: none;
+    }
+    .imprimir {
+        display: block;
+    }
+}
+
+.imprimir {
+    display: none;
+}
+
+/* Estilos para hacer que el historial de ventas sea responsivo */
+@media (max-width: 768px) {
+    #historialVentas table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    #historialVentas th, #historialVentas td {
+        display: block;
+        text-align: right;
+    }
+    #historialVentas th {
+        background-color: #f9f9f9;
+    }
+    #historialVentas td {
+        border-top: 1px solid #ddd;
+        padding: 10px 5px;
+    }
+    #historialVentas td::before {
+        content: attr(data-label);
+        display: block;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 480px) {
+    .medioPago {
+        flex-direction: column;
+    }
+
+    .medioPago label {
+        margin-bottom: 5px;
+    }
+
+    .medioPago input,
+    .medioPago select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        padding: 10px;
+        
+    }
+
+    .btnAnular {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        font-size: 12px;
+    }
+}
