@@ -61,7 +61,7 @@
       <div class="totalCompra">Total de la Compra: $<span id="montoTotal">0</span></div><br>
       <div class="numeroTicket">Número de Ticket: <span id="numeroTicket">1</span></div><br>
       
-      <!-- Medio de pago y nombre del cliente -->
+      <!-- Medio de pago, estado y nombre del cliente -->
       <div class="medioPago">
         <label for="nombreCliente">Nombre del Cliente:</label>
         <input type="text" id="nombreCliente" placeholder="Ingrese el nombre">
@@ -71,12 +71,16 @@
           <option value="efectivo">Efectivo</option>
           <option value="transferencia">Transferencia Bancaria</option>
         </select>
+
+        <label for="selectEstado">Estado:</label>
+        <select id="selectEstado">
+          <option value="pagado">Pagado</option>
+          <option value="pendiente">Pendiente</option>
+        </select>
       </div>
       
       <button type="submit" class="btn">Generar Ticket</button>
     </form>
-    <!-- Botón para exportar a Excel -->
-
 
     <!-- Sección para mostrar el ticket impreso -->
     <div id="ticketImpreso" class="imprimir" style="display: none;">
@@ -115,4 +119,3 @@
 
 </body>
 </html>
-
