@@ -53,12 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 <option value="3" data-precio="2000">Salchipapas ($2000)</option>
                 <option value="4" data-precio="1000">Consomé ($1000)</option>
                 <option value="5" data-precio="1500">Choripan ($1500)</option>
-                <option value="6" data-precio="300">Sopaipillas ($1500)</option>
+                <option value="6" data-precio="300">Sopaipillas ($300)</option>
                 <option value="7" data-precio="500">Queque ($500)</option>
                 <option value="8" data-precio="800">Bebida ($800)</option>
                 <option value="9" data-precio="1000">Agua 500 CC ($1000)</option>
                 <option value="10" data-precio="1000">Cuchuflí ($1000)</option>
-                <option value="11" data-precio="1000">Jugo ($1000)</option>
+                <option value="11" data-precio="500">Jugo en caja ($500)</option>
                 <option value="12" data-precio="500">Té ($500)</option>
                 <option value="13" data-precio="500">Café ($500)</option>
             </select>
@@ -204,6 +204,35 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    document.getElementById('exportarExcel').addEventListener('click', () => {
+        // Convertir los datos del historial a un formato adecuado para Excel
+        const datosHistorial = [['Número de Ticket', 'Productos', 'Total', 'Medio de Pago', 'Nombre del Cliente', 'Estado']];
+        
+        historialVentas.forEach(venta => {
+            datosHistorial.push([
+                venta.numeroTicket,
+                venta.productos.join(', '),
+                `$${venta.montoTotal.toFixed(2)}`,
+                venta.medioPago,
+                venta.nombreCliente,
+                venta.anulado ? 'Anulado' : 'Activo'
+            ]);
+        });
+    
+        // Crear una hoja de trabajo (worksheet) a partir de los datos
+        const ws = XLSX.utils.aoa_to_sheet(datosHistorial);
+    
+        // Crear un libro de trabajo (workbook)
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, 'Historial de Ventas');
+    
+        // Exportar el archivo Excel
+        XLSX.writeFile(wb, 'historial_ventas.xlsx');
+    });
+    
+
+    
 
     // Manejar eventos de anulación de venta
     cuerpoHistorial.addEventListener('click', (e) => {

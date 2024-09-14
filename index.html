@@ -75,6 +75,8 @@
       
       <button type="submit" class="btn">Generar Ticket</button>
     </form>
+    <!-- Botón para exportar a Excel -->
+
 
     <!-- Sección para mostrar el ticket impreso -->
     <div id="ticketImpreso" class="imprimir" style="display: none;">
@@ -101,10 +103,15 @@
           <!-- Las filas se agregarán dinámicamente aquí -->
         </tbody>
       </table>
+      <button id="exportarExcel" class="btn">Exportar a Excel</button>
+      
     </div>
+    
   </div>
 
   <script src="assets/JS/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
 
 </body>
 </html>
