@@ -48,20 +48,21 @@ document.addEventListener('DOMContentLoaded', () => {
         productoDiv.className = 'producto';
         productoDiv.innerHTML = `
             <select class="selectProducto">
-                <option value="1" data-precio="2500">Empanada Horno ($2500)</option>
-                <option value="2" data-precio="2500">Empanada Frita ($2500)</option>
-                <option value="3" data-precio="2000">Salchipapas ($2000)</option>
-                <option value="4" data-precio="1000">Consomé ($1000)</option>
-                <option value="5" data-precio="1500">Choripan ($1500)</option>
-                <option value="6" data-precio="300">Sopaipillas ($300)</option>
-                <option value="7" data-precio="500">Queque ($500)</option>
-                <option value="8" data-precio="800">Bebida ($800)</option>
-                <option value="9" data-precio="1000">Agua 500 CC ($1000)</option>
-                <option value="10" data-precio="1000">Cuchuflí ($1000)</option>
-                <option value="11" data-precio="500">Jugo en caja ($500)</option>
-                <option value="12" data-precio="500">Té ($500)</option>
-                <option value="13" data-precio="500">Café ($500)</option>
-                <option value="14" data-precio="1500">Empanada Queso ($1500)</option>
+                <option value="1" data-precio="2500">Empanada Pino Horno ($2500)</option>
+                <option value="2" data-precio="2500">Empanada Pino Frita ($2500)</option>
+                <option value="3" data-precio="1500">Empanada Queso ($1500)</option>
+                <option value="4" data-precio="2000">Salchipapas ($2000)</option>
+                <option value="5" data-precio="1000">Consomé ($1000)</option>
+                <option value="6" data-precio="1500">Choripan ($1500)</option>
+                <option value="7" data-precio="300">Sopaipillas ($300)</option>
+                <option value="8" data-precio="500">Queque ($500)</option>
+                <option value="9" data-precio="1000">Cuchuflí ($1000)</option>
+                <option value="10" data-precio="800">Bebida ($800)</option>
+                <option value="11" data-precio="1000">Agua 500 CC ($1000)</option>
+                <option value="12" data-precio="500">Jugo en caja ($500)</option>
+                <option value="13" data-precio="500">Té ($500)</option>
+                <option value="14" data-precio="500">Café ($500)</option>
+                
 
             </select>
             <input type="number" class="inputCantidad" min="1" value="1">
