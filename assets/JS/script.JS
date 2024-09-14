@@ -61,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <option value="11" data-precio="500">Jugo en caja ($500)</option>
                 <option value="12" data-precio="500">Té ($500)</option>
                 <option value="13" data-precio="500">Café ($500)</option>
+                <option value="14" data-precio="1500">Empanada Queso ($1500)</option>
+
             </select>
             <input type="number" class="inputCantidad" min="1" value="1">
             <span class="totalProducto">Total: $1500</span>
